@@ -1,0 +1,33 @@
+erDiagram
+    Category {
+        string category_id PK
+        string name
+        string description
+    }
+    Product {
+        string product_id PK
+        string category_id FK
+        string title
+        decimal price
+        int stock_quantity
+    }
+    Client {
+        string client_id PK
+        string full_name
+        string email
+        string phone
+    }
+    Order {
+        string order_id PK
+        string client_id FK
+        timestamp order_date
+        string status
+        decimal total_amount
+    }
+    OrderItem {
+        string order_id PK, FK
+        string product_id PK, FK
+        int quantity
+        decimal unit_price
+    }
+    Category ||--o{ Product : contains
