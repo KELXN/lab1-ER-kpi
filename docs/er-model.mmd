@@ -32,3 +32,5 @@ erDiagram
     }
     Category ||--o{ Product : contains
     Client ||--o{ Order : places
+    Order ||--|{ OrderItem : includes
+    Product ||--o{ OrderItem : appears_in
